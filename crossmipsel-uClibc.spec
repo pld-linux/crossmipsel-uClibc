@@ -1,4 +1,3 @@
-#
 
 %define		llh_version	2.4.31
 
@@ -44,7 +43,9 @@ sed -i "s@^.*KERNEL_SOURCE.*\$@KERNEL_SOURCE=\"$PWD/linux-libc-headers-%{llh_ver
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,6 +55,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changelog* DEDICATION.mjn3 MAINTAINERS README TODO docs/threads.txt
 %dir %{arch}/lib
 %attr(755,root,root) %{arch}/lib/*.so
-%{arch}/lib/*.so.*
+%attr(755,root,root) %{arch}/lib/*.so.*
 %{arch}/lib/*.[ao]
 %{arch}/include
