@@ -2,7 +2,7 @@
 %define		llh_version	2.4.31
 
 Summary:	C library optimized for size (mipsel version)
-Summary(pl):	Biblioteka C zoptymalizowana na rozmiar (dla mipsel)
+Summary(pl.UTF-8):   Biblioteka C zoptymalizowana na rozmiar (dla mipsel)
 Name:		crossmipsel-uClibc
 Version:	0.9.28
 Release:	1
@@ -28,8 +28,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Small libc for building embedded applications.
 Version compiled for mipsel.
 
-%description -l pl
-Ma≥a libc do budowania aplikacji wbudowanych.
+%description -l pl.UTF-8
+Ma≈Ça libc do budowania aplikacji wbudowanych.
 Wersja dla mipsel.
 
 %prep
