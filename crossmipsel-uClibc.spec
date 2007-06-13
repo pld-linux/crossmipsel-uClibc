@@ -23,7 +23,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		target		mipsel-pld-linux
 %define		arch		%{_prefix}/%{target}
 
-%define         _noautostrip    .*
+%define		no_install_post_strip			1
+%define		no_install_post_chrpath			1
 
 %description
 Small libc for building embedded applications. Version compiled for
