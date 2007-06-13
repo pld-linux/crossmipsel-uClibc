@@ -5,7 +5,7 @@ Summary:	C library optimized for size (mipsel version)
 Summary(pl.UTF-8):	Biblioteka C zoptymalizowana na rozmiar (dla mipsel)
 Name:		crossmipsel-uClibc
 Version:	0.9.28
-Release:	1
+Release:	2
 Epoch:		0
 License:	LGPL
 Group:		Libraries
@@ -13,8 +13,9 @@ Source0:	http://www.uclibc.org/downloads/uClibc-%{version}.tar.bz2
 # Source0-md5:	1ada58d919a82561061e4741fb6abd29
 Source1:	http://www.uclibc.org/downloads/toolchain/linux-libc-headers-%{llh_version}.tar.bz2
 # Source1-md5:	997d36627baf6825c712431dee4d79d3
-Source2:	crossmipsel-uClibc.config
+Source2:	%{name}.config
 URL:		http://www.uclibc.org/
+BuildRequires:	crossmipsel-gcc
 BuildRequires:	sed >= 4.0
 BuildRequires:	which
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -25,12 +26,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define         _noautostrip    .*
 
 %description
-Small libc for building embedded applications.
-Version compiled for mipsel.
+Small libc for building embedded applications. Version compiled for
+mipsel.
 
 %description -l pl.UTF-8
-Mała libc do budowania aplikacji wbudowanych.
-Wersja dla mipsel.
+Mała libc do budowania aplikacji wbudowanych. Wersja dla mipsel.
 
 %prep
 %setup -q -n uClibc-%{version} -a1
